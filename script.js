@@ -1,6 +1,6 @@
-// randomly selects rock, paper, or scissors
+// randomly selects r, p, or s
 function computerPlay() {
-    const choices = ["rock", "paper", "scissors"];
+    const choices = ["r", "p", "s"];
     const min = 0;
     const max = choices.length - 1;
     const rand = Math.floor(Math.random() * (max - min + 1)) + min; // true random, inclusive range
@@ -11,8 +11,48 @@ function computerPlay() {
 const buttons = document.querySelectorAll('button');
 buttons.forEach((button) => {
     button.addEventListener('click', () => {
-        let input = button.id;
-        console.log(input);
+        let userChoice = button.id;
+        let computerChoice = computerPlay();
+        if (userChoice == computerChoice)
+        alert("Tie!");
+        else {
+            if (computerChoice == "r") {
+                if (userChoice == "p") {
+                    alert("Player wins!");
+                    return true;
+                }
+                else if (userChoice == "s"){
+                    alert("PC wins!");
+                    return false;                
+                }
+                else
+                    alert("Invalid input.");
+            }
+            else if (computerChoice == "p") {
+                if (userChoice == "s") {
+                    alert("Player wins!");
+                    return true
+                }
+                else if (userChoice == "r") {
+                    alert("PC wins!");
+                    return false
+                }
+                else
+                    alert("Invalid input.");            
+            }
+            else {
+                if (userChoice == "r") {
+                    alert("Player wins!");
+                    return true;
+                }
+                else if (userChoice == "p") {
+                    alert("PC wins!");
+                    return false;
+                }
+                else
+                    alert("Invalid input.");            
+            }
+        }
     });
 });
 
