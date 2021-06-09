@@ -7,3 +7,10 @@ function computerPlay() {
     console.log(choices[rand]);
     return choices[rand];
 }
+
+const buttons = document.querySelectorAll('button');
+buttons.forEach((button) => {
+    button.addEventListener('click', () => {
+        alert(button.id);
+    });
+});
