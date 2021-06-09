@@ -11,6 +11,8 @@ function computerPlay() {
 const buttons = document.querySelectorAll('button');
 buttons.forEach((button) => {
     button.addEventListener('click', () => {
-        alert(button.id);
+        let input = button.id;
+        console.log(input);
     });
 });
+
