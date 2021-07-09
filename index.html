@@ -3,6 +3,7 @@
     <head>
         <meta charset="utf-8">
         <title>RPS v2</title>
+        <link rel="stylesheet" href="style.css">
     </head>
     <body>
       <header>
@@ -20,15 +21,17 @@
       </div>
 
       <div class="choices">
-        <div class="choice">
+        <div class="choice" id="r"> <!--three members in class choice, each with their own ID-->
           <img src="./images/rock.jpeg" alt="Rock image"> <!--"./images/rock.jpg means current dir->images folder->rock.jpg"-->
         </div>
-        <div class="choice">
+        <div class="choice" id="p">
           <img src="./images/paper.jpeg" alt="Paper image"> <!--"./images/rock.jpg means current dir->images folder->rock.jpg"-->
         </div>
-        <div class="choice">
+        <div class="choice" id="s">
           <img src="./images/scissors.jpeg" alt="Scissors image"> <!--"./images/rock.jpg means current dir->images folder->rock.jpg"-->
         </div>
       </div>
+
+      <p id="action-message">Make your move</p>
     </body>
 <html>

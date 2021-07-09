@@ -1,9 +1,35 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <title>RPS v2</title>
-    </head>
-    <body>
-    </body>
-<html>
+@import url('https://fonts.googleapis.com/css2?family=Asap:wght@400;500;700&display=swap'); /* import Asap font-family */
+
+* {
+    /* * is the universal class selector */
+    margin: 0;
+    padding: 0;
+    box-sizing: 
+    border-box;
+}
+
+body {
+    background-color: #24272E;
+}
+
+header {
+    background: white;
+    padding: 20px;
+}
+
+header > h1 {
+    color: #25272E;
+    text-align: center;
+    font-family: Asap, sans-serif;
+}
+
+.scoreboard {
+    margin: 20px auto;
+    border: 3px solid white;
+    border-radius: 4px; /* makes rounded edges */
+    text-align: center;
+    width: 200px;
+    color: white;
+    font-size: 40px;
+    padding: 15px 20px;
+}
