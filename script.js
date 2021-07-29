@@ -51,6 +51,7 @@ function lose(user, cpu) {
 function draw(user, cpu) {
     const smallUserWord = 'user'.fontsize(3).sup();
     const smallCpuWord = 'cpu'.fontsize(3).sup();
+    const userChoice_div = document.getElementById(user);
     result_p.innerHTML = `${convertToWord(user)}${smallUserWord} equals ${convertToWord(cpu)}${smallCpuWord}. Draw!`;
     userChoice_div.classList.add('gray-glow');
     setTimeout(() => userChoice_div.classList.remove('gray-glow'), 300);
@@ -63,6 +64,14 @@ function declareWinner(user, cpu) {
     else {
         actionMessage_p.innerHTML = `CPU FIRST TO ${WIN_SCORE}. CPU WINS!`;
     }
+}
+
+function resetGame() {
+    actionMessage_p.innerHTML = 'Make your move.';
+    userScore = 0;
+    cpuScore = 0;
+    userScore_span.innerHTML = userScore;
+    cpuScore_span.innerHTML = cpuScore;
 }
 
 function game(userChoice) {
@@ -86,7 +95,7 @@ function game(userChoice) {
     }
     if (userScore == WIN_SCORE || cpuScore == WIN_SCORE) {
         declareWinner(userScore, cpuScore);
-        resetGame();
+        setTimeout(resetGame, 3000); // wait 3 seconds before resetting
     } 
 
 }
