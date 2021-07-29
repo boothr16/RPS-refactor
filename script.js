@@ -16,23 +16,35 @@ function getCpuChoice() {
     return choices[randomNum];
 }
 
+function win() {
+    console.log('WIN');
+}
+
+function lose() {
+    console.log('LOSE');
+}
+
+function draw() {
+    console.log('DRAW');
+}
+
 function game(userChoice) {
     const cpuChoice = getCpuChoice()
     switch (userChoice + cpuChoice) {
         case 'rs':
         case 'pr':
         case 'sp':
-            console.log('USER WINS');
+            win();
             break;
         case 'rp':
         case 'ps':
         case 'sr':
-            console.log('USER LOSES');
+            lose();
             break;
         case 'rr':
         case 'pp':
         case 'ss':
-            console.log('TIE');
+            draw();
             break;
     }
 }
