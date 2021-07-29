@@ -18,6 +18,23 @@ function getCpuChoice() {
 
 function game(userChoice) {
     const cpuChoice = getCpuChoice()
+    switch (userChoice + cpuChoice) {
+        case 'rs':
+        case 'pr':
+        case 'sp':
+            console.log('USER WINS');
+            break;
+        case 'rp':
+        case 'ps':
+        case 'sr':
+            console.log('USER LOSES');
+            break;
+        case 'rr':
+        case 'pp':
+        case 'ss':
+            console.log('TIE');
+            break;
+    }
 }
 
 function main() {
