@@ -26,15 +26,24 @@ function win(user, cpu) {
     userScore++;
     userScore_span.innerHTML = userScore;
     cpuScore_span.innerHTML = cpuScore;
-    result_p.innerHTML = user + ' beats ' + cpu + '. You win!';
+    const smallUserWord = 'user'.fontsize(3).sup();
+    const smallCpuWord = 'cpu'.fontsize(3).sup();
+    result_p.innerHTML = `${convertToWord(user)}${smallUserWord} beats ${convertToWord(cpu)}${smallCpuWord}. You win!`;
 }
 
-function lose() {
+function lose(user, cpu) {
     cpuScore++;
+    userScore_span.innerHTML = userScore;
+    cpuScore_span.innerHTML = cpuScore;
+    const smallUserWord = 'user'.fontsize(3).sup();
+    const smallCpuWord = 'cpu'.fontsize(3).sup();
+    result_p.innerHTML = `${convertToWord(user)}${smallUserWord} loses to ${convertToWord(cpu)}${smallCpuWord}. You lose!`;
 }
 
-function draw() {
-    console.log('DRAW');
+function draw(user, cpu) {
+    const smallUserWord = 'user'.fontsize(3).sup();
+    const smallCpuWord = 'cpu'.fontsize(3).sup();
+    result_p.innerHTML = `${convertToWord(user)}${smallUserWord} equals ${convertToWord(cpu)}${smallCpuWord}. Draw!`;
 }
 
 function game(userChoice) {
