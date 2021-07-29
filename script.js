@@ -28,7 +28,10 @@ function win(user, cpu) {
     cpuScore_span.innerHTML = cpuScore;
     const smallUserWord = 'user'.fontsize(3).sup();
     const smallCpuWord = 'cpu'.fontsize(3).sup();
+    const userChoice_div = document.getElementById(user);
     result_p.innerHTML = `${convertToWord(user)}${smallUserWord} beats ${convertToWord(cpu)}${smallCpuWord}. You win!`;
+    userChoice_div.classList.add('green-glow');
+    setTimeout(function() {  userChoice_div.classList.remove('green-glow') }, 300);
 }
 
 function lose(user, cpu) {
