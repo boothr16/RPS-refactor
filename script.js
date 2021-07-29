@@ -1,5 +1,6 @@
 let userScore = 0;
 let cpuScore = 0;
+const WIN_SCORE = 5;
 // _span variables are examples of DOM variables
 const userScore_span = document.getElementById("user-score");
 const cpuScore_span = document.getElementById("cpu-score");
@@ -9,6 +10,7 @@ const result_p = document.querySelector(".result > p"); // _p variable
 const rock_div = document.getElementById("r");
 const paper_div = document.getElementById("p");
 const scissors_div = document.getElementById("s");
+const actionMessage_p = document.getElementById('action-message');
 
 function getCpuChoice() {
     const choices = ['r', 'p', 's'];
@@ -56,7 +58,10 @@ function draw(user, cpu) {
 
 function declareWinner(user, cpu) {
     if (user > cpu) {
-        
+        actionMessage_p.innerHTML = `USER FIRST TO ${WIN_SCORE}. USER WINS!`;
+    }
+    else {
+        actionMessage_p.innerHTML = `CPU FIRST TO ${WIN_SCORE}. CPU WINS!`;
     }
 }
 
@@ -79,7 +84,7 @@ function game(userChoice) {
             draw(userChoice, cpuChoice);
             break;
     }
-    if (userScore == 5 || cpuScore == 5) {
+    if (userScore == WIN_SCORE || cpuScore == WIN_SCORE) {
         declareWinner(userScore, cpuScore);
         resetGame();
     } 
