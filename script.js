@@ -5,7 +5,7 @@ const userScore_span = document.getElementById("user-score");
 const cpuScore_span = document.getElementById("cpu-score");
 // _div variable is another example of a DOM variable
 const scoreBoard_div = document.querySelector(".scoreboard");
-const result_p = document.querySelector(".result > p");
+const result_p = document.querySelector(".result > p"); // _p variable
 const rock_div = document.getElementById("r");
 const paper_div = document.getElementById("p");
 const scissors_div = document.getElementById("s");
@@ -54,6 +54,12 @@ function draw(user, cpu) {
     setTimeout(() => userChoice_div.classList.remove('gray-glow'), 300);
 }
 
+function declareWinner(user, cpu) {
+    if (user > cpu) {
+        
+    }
+}
+
 function game(userChoice) {
     const cpuChoice = getCpuChoice()
     switch (userChoice + cpuChoice) {
@@ -73,6 +79,11 @@ function game(userChoice) {
             draw(userChoice, cpuChoice);
             break;
     }
+    if (userScore == 5 || cpuScore == 5) {
+        declareWinner(userScore, cpuScore);
+        resetGame();
+    } 
+
 }
 
 function main() {
