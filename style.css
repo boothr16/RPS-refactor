@@ -90,7 +90,7 @@ header > h1 {
 .choice:hover {
     /* add effects when mouse hovers over a choice */
     cursor: pointer;
-    background:green;
+    background:white;
 }
 
 #action-message {
