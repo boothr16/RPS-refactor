@@ -1,11 +1,11 @@
-const userScore = 0;
-const cpuScore = 0;
+let userScore = 0;
+let cpuScore = 0;
 // _span variables are examples of DOM variables
 const userScore_span = document.getElementById("user-score");
 const cpuScore_span = document.getElementById("cpu-score");
 // _div variable is another example of a DOM variable
 const scoreBoard_div = document.querySelector(".scoreboard");
-const result_div = document.querySelector(".result");
+const result_p = document.querySelector(".result > p");
 const rock_div = document.getElementById("r");
 const paper_div = document.getElementById("p");
 const scissors_div = document.getElementById("s");
@@ -16,12 +16,21 @@ function getCpuChoice() {
     return choices[randomNum];
 }
 
-function win() {
-    console.log('WIN');
+function convertToWord(letter) {
+    if (letter == 'r') return 'Rock';
+    if (letter == 'p') return 'Paper';
+    if (letter == 's') return 'Scissors';
+}
+
+function win(user, cpu) {
+    userScore++;
+    userScore_span.innerHTML = userScore;
+    cpuScore_span.innerHTML = cpuScore;
+    result_p.innerHTML = user + ' beats ' + cpu + '. You win!';
 }
 
 function lose() {
-    console.log('LOSE');
+    cpuScore++;
 }
 
 function draw() {
@@ -34,17 +43,17 @@ function game(userChoice) {
         case 'rs':
         case 'pr':
         case 'sp':
-            win();
+            win(userChoice, cpuChoice);
             break;
         case 'rp':
         case 'ps':
         case 'sr':
-            lose();
+            lose(userChoice, cpuChoice);
             break;
         case 'rr':
         case 'pp':
         case 'ss':
-            draw();
+            draw(userChoice, cpuChoice);
             break;
     }
 }
